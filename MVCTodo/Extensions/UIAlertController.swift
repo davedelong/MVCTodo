@@ -12,11 +12,11 @@ private var DatePickerHelperKey: UInt8 = 0
 
 extension UIAlertController {
     
-    func addDatePicker(_ configuration: @escaping (UIDatePicker) -> Void) {
+    func addDatePicker(_ configuration: @escaping (UITextField, UIDatePicker) -> Void) {
         addTextField { tf in
             
             let dp = UIDatePicker()
-            configuration(dp)
+            configuration(tf, dp)
             tf.inputView = dp
             
             let helper = AlertDatePickerHelper(textField: tf, datePicker: dp)

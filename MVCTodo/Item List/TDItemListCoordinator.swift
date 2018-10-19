@@ -142,8 +142,9 @@ class TDItemListCoordinator: Coordinator, TDStorageObserver {
             $0.placeholder = "Title"
         }
         prompt.addDatePicker {
-            $0.minimumDate = Date()
-            $0.datePickerMode = .date
+            $0.placeholder = "Due"
+            $1.minimumDate = Date()
+            $1.datePickerMode = .date
         }
         
         
@@ -172,5 +173,32 @@ class TDItemListCoordinator: Coordinator, TDStorageObserver {
 }
 
 extension TDItemListCoordinator: ListViewControllerDelegate {
+    
+    func listViewController(_ list: ListViewController, swipeConfigurationFor item: UIViewController) -> UISwipeActionsConfiguration? {
+        
+        guard let item = itemEntries.first(where: { $0.row == item })?.item else { return nil }
+        
+        let action: UIContextualAction
+        if item.completion == nil {
+            action = UIContextualAction(style: .normal, title: "Done", handler: { [weak self] (action, view, completion) in
+                let now = Date()
+                let newItem = TDItem(identifier: item.identifier, name: item.name, creation: item.creation, due: item.due, completion: now)
+                
+                self?.storage.updateItem(newItem)
+                completion(true)
+            })
+        } else {
+            action = UIContextualAction(style: .normal, title: "Not Done", handler: { [weak self] (action, view, completion) in
+                let newItem = TDItem(identifier: item.identifier, name: item.name, creation: item.creation, due: item.due, completion: nil)
+                
+                self?.storage.updateItem(newItem)
+                completion(true)
+            })
+        }
+        
+        let config = UISwipeActionsConfiguration(actions: [action])
+        config.performsFirstActionWithFullSwipe = true
+        return config
+    }
     
 }
