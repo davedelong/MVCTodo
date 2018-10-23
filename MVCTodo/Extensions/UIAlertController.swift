@@ -61,9 +61,7 @@ class AlertDatePickerHelper: NSObject {
     }
     
     @objc func datePickerChanged(_ datePicker: UIDatePicker) {
-        let date = datePicker.date
-        let string = formatter.string(from: date)
-        textField?.text = string
+        textField?.text = formatter.string(from: datePicker.date)
     }
     
 }

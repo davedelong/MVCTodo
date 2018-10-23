@@ -76,6 +76,7 @@
 		551BD8CA217A4267001732B6 /* TDItemRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDItemRowViewController.swift; sourceTree = "<group>"; };
 		551BD8CB217A4267001732B6 /* TDItemRowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TDItemRowViewController.xib; sourceTree = "<group>"; };
 		551BD8CE217A81B8001732B6 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		551BD8D0217B7A5D001732B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		551BD86A2178E404001732B6 = {
 			isa = PBXGroup;
 			children = (
+				551BD8D0217B7A5D001732B6 /* README.md */,
 				551BD8752178E404001732B6 /* MVCTodo */,
 				551BD8742178E404001732B6 /* Products */,
 			);
@@ -110,8 +112,6 @@
 			children = (
 				551BD8762178E404001732B6 /* AppDelegate.swift */,
 				551BD8A921793065001732B6 /* AppCoordinator.swift */,
-				551BD892217902CF001732B6 /* TestViewController.swift */,
-				551BD893217902CF001732B6 /* TestViewController.xib */,
 				551BD8C221799C43001732B6 /* AppRouter.swift */,
 				551BD8C421799F4E001732B6 /* Coordinator.swift */,
 				551BD8AD2179346E001732B6 /* Item List Overview */,
@@ -119,6 +119,7 @@
 				551BD8882178E422001732B6 /* Model */,
 				551BD89621790621001732B6 /* Common View Controllers */,
 				551BD88D2178EBE4001732B6 /* Extensions */,
+				551BD8D1217B7A87001732B6 /* Debug */,
 				551BD87D2178E406001732B6 /* Assets.xcassets */,
 				551BD87F2178E406001732B6 /* LaunchScreen.storyboard */,
 				551BD8822178E406001732B6 /* Info.plist */,
@@ -157,7 +158,6 @@
 			children = (
 				551BD8902178F381001732B6 /* ContainerViewController.swift */,
 				551BD89921790658001732B6 /* ScrollingContentViewController.swift */,
-				551BD89721790632001732B6 /* ColorViewController.swift */,
 				551BD89B2179121E001732B6 /* MessageViewController.swift */,
 				551BD89C2179121E001732B6 /* MessageViewController.xib */,
 				551BD8A121791991001732B6 /* ListViewController.swift */,
@@ -183,6 +183,16 @@
 				551BD8CB217A4267001732B6 /* TDItemRowViewController.xib */,
 			);
 			path = "Item List";
+			sourceTree = "<group>";
+		};
+		551BD8D1217B7A87001732B6 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				551BD892217902CF001732B6 /* TestViewController.swift */,
+				551BD893217902CF001732B6 /* TestViewController.xib */,
+				551BD89721790632001732B6 /* ColorViewController.swift */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
