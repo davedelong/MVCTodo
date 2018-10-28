@@ -20,7 +20,7 @@ There are a few take-aways you should have from examining this code. In no parti
 
 - Observe how all view controllers are programmatically instantiated. While this is not a requirement to do view controller composition, I personally find it to be much more expressive and useful than instantiating based on identifiers in storyboards.
 
-- There is roughly a one-to-one correspondance between a Coordinator and a "page" or "screen" of information seen in the app. With that in mind, observe how _none of the coordinators_ use "custom" view controllers. By this I mean that all of them have, as their "primary" view controller, a `UIViewController` that is a reusable view controller (ie, a view controller that has not been custom-built for that screen of content)
+- There is roughly a one-to-one correspondence between a Coordinator and a "page" or "screen" of information seen in the app. With that in mind, observe how _none of the coordinators_ use "custom" view controllers. By this I mean that all of them have, as their "primary" view controller, a `UIViewController` that is a reusable view controller (ie, a view controller that has not been custom-built for that screen of content)
 
 - Multiple screens have the notion of "an empty state" and "a content-full state". It's pretty standard to see that implemented as hiding views or messing around with alphas or "background views" or what not. Observe in this app how this is implemented instead: A coordinator owns a "ContainerViewController" and just tells it to display different content.
 
