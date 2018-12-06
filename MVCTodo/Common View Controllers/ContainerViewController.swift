@@ -11,7 +11,10 @@ import UIKit
 class ContainerViewController: UIViewController {
     
     var content: UIViewController? {
-        didSet { replaceChild(oldValue, with: content) }
+        didSet {
+            replaceChild(oldValue, with: content)
+            setNeedsStatusBarAppearanceUpdate()
+        }
     }
     
     init(content: UIViewController?) {
@@ -39,6 +42,9 @@ class ContainerViewController: UIViewController {
         replaceChild(nil, with: content)
     }
     
+    override var childForStatusBarStyle: UIViewController? {
+        return content
+    }
     
     private func replaceChild(_ oldChild: UIViewController?,
                              with newChild: UIViewController?) {
@@ -64,7 +70,6 @@ class ContainerViewController: UIViewController {
             case (nil, nil):
                 return
         }
-        
     }
     
     private func transition(to: UIViewController, in container: UIView, duration: TimeInterval, options: UIView.AnimationOptions) {
