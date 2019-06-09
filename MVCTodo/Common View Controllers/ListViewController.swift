@@ -107,6 +107,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let row = content[indexPath.row]
+
+        if !cell.contentView.subviews.isEmpty && !row.view.isContainedWithin(cell.contentView) {
+            cell.contentView.removeAllSubviews()
+        }
         
         cell.contentView.embedSubview(row.view)
         
